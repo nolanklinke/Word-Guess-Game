@@ -10,19 +10,19 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 for (var i = 0; i < letters.length; i++) {
 
     var letterButton = $("<button>");
-    letterButton.addClass("letter-button letter letter-button-color");
+    letterButton.addClass("letter-button letter letter-button-color m-1");
     letterButton.attr("data-letter", letters[i]);
     letterButton.text(letters[i]);
     letterButton.appendTo("#buttons");
     
-}
+};
 
 //generate random word to guess
 function refreshWord() {
     computerChoice = country[Math.floor(Math.random() * country.length)];
     console.log(computerChoice);
 
-}
+};
 
 refreshWord();
 
@@ -34,8 +34,12 @@ for (var j = 0; j < computerChoice.length; j++) {
     newSpan.text(" " + computerChoice[j]).after(" ");
     newSpan.addClass("border-bottom m-3");
     newSpan.appendTo("#currentWord");
-}
+};
 
+//declare clicking a letter button as a guess and hide
+$(".letter-button").on("click", function() {
+
+});
 
 
 
