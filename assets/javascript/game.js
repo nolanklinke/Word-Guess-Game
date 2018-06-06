@@ -26,6 +26,35 @@ function refreshWord() {
 
 refreshWord();
 
+//call function to update wins
+function updateWins() {
+    $("#winsDisplay").text("Wins: " + wins);
+}
+
+updateWins();
+
+//call function to update guesses
+function guessUpdate() {
+    $("#guessLeft").text(guessesRemaining);
+}
+
+guessUpdate();
+
+//document letters guessed & update guesses
+$(".letter-button").on("click", function () {
+
+    var userGuess = $("<span>")
+
+    userGuess.text($(this).attr("data-letter"));
+
+    userGuess.appendTo("#lettersGuessed");
+
+    guessesRemaining--;
+
+    guessUpdate();
+
+});
+
 //seperate computerChoice into individual characters
 for (var j = 0; j < computerChoice.length; j++) {
 
@@ -40,6 +69,13 @@ for (var j = 0; j < computerChoice.length; j++) {
 $(".letter-button").on("click", function() {
 
 });
+
+//PSUEDO - What I would still like to do
+// make words dissapear
+//show picture of country flag when word is guessed
+//play national anthem of that country
+//make it pretty
+
 
 
 
